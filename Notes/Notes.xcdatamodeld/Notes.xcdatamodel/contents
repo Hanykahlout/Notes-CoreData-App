@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Categories" representedClassName="Categories" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptions" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="category" inverseEntity="Note"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="categories" inverseEntity="Users"/>
+    </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptions" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" inverseName="notes" inverseEntity="Categories"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Categories" inverseName="user" inverseEntity="Categories"/>
+    </entity>
+    <elements>
+        <element name="Categories" positionX="-54" positionY="27" width="128" height="103"/>
+        <element name="Note" positionX="-36" positionY="36" width="128" height="88"/>
+        <element name="Users" positionX="-36" positionY="72" width="128" height="133"/>
+    </elements>
 </model>
