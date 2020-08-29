@@ -28,6 +28,7 @@ class SignUpViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
     }
+    
     func initalization() {
         removeBackgroungNavBar()
         userManager = UserManager()
@@ -56,9 +57,7 @@ extension SignUpViewController{
             if !thereIsASameUserName(){
                 let isSaved = saveData()
                 if isSaved{
-                    let user = userManager.read()
-                    print(user.firstName ?? "-------")
-//                    goToCategoriesScreen()
+                    goToCategoriesScreen()
                     clear()
                 }
             }else{
@@ -93,6 +92,7 @@ extension SignUpViewController{
     
     func saveData() -> Bool {
         let user = Users(context: userController.context)
+        user.id = UUID().uuidString
         user.firstName = firstNameTextField.text!
         user.lastName = lastNameTextField.text!
         user.password = password.text!
@@ -103,7 +103,7 @@ extension SignUpViewController{
             SCLAlertView().showError("Error", subTitle: "No User has been created ")
             return false
         }
-//        userManager.create(user: user)
+        userManager.create(user: user)
         return true
     }
     

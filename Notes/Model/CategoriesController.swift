@@ -41,11 +41,11 @@ class CategoriesController {
         }
         return nil
     }
-    func update(oldName:String,newName:String,newDescription:String) -> Bool {
+    func update(categoryId:String,newName:String,newDescription:String) -> Bool {
         do{
             let fetchR:NSFetchRequest = Categories.fetchRequest()
             fetchR.fetchLimit = 1
-            fetchR.predicate = NSPredicate(format: "name = %@", oldName)
+            fetchR.predicate = NSPredicate(format: "id = %@", categoryId)
             let category = try context.fetch(fetchR)
             if !category.isEmpty{
                 if let _category = category.first{
@@ -64,11 +64,11 @@ class CategoriesController {
         return false
     }
     
-    func delete(name:String) -> Bool {
+    func delete(categoryId:String) -> Bool {
         do{
             let fetchR:NSFetchRequest = Categories.fetchRequest()
             fetchR.fetchLimit = 1
-            fetchR.predicate = NSPredicate(format: "name = %@", name)
+            fetchR.predicate = NSPredicate(format: "id = %@", categoryId)
             let category = try context.fetch(fetchR)
             if !category.isEmpty{
                 if let _category = category.first{
@@ -83,20 +83,4 @@ class CategoriesController {
         return false
     }
     
-    
-    func isExist(name:String) -> Bool {
-        do{
-            let fetchR:NSFetchRequest = Categories.fetchRequest()
-            fetchR.fetchLimit = 1
-            fetchR.predicate = NSPredicate(format: "name = %@", name)
-            let category = try context.fetch(fetchR)
-            if !category.isEmpty{
-                SCLAlertView().showError("Error", subTitle: "There is ths same category name")
-                return true
-            }
-        }catch let error as NSError{
-            print(error)
-        }
-        return false
-    }
 }

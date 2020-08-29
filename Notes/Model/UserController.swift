@@ -46,28 +46,49 @@ class UserController {
         }
         return nil
     }
+    func update(userId:String,firstName:String,lastName:String,email:String,phoneNumber:String) -> Bool {
+        do{
+            let fetchR:NSFetchRequest = Users.fetchRequest()
+            fetchR.fetchLimit = 1
+            fetchR.predicate = NSPredicate(format: "id = %@", userId)
+            let users = try context.fetch(fetchR)
+            if !users.isEmpty{
+                if let _user = users.first{
+                    _user.setValue(firstName, forKey: "firstName")
+                    _user.setValue(lastName, forKey: "lastName")
+                    _user.setValue(phoneNumber, forKey: "phoneNumber")
+                    _user.setValue(email, forKey: "email")
+                    
+                    try context.save()
+                    
+                    return true
+                }
+            }else{
+                SCLAlertView().showError("Error", subTitle: "Category Not Found !!")
+            }
+        }catch let error as NSError{
+            print(error)
+        }
+        return false
+    }
+    func getUserById(userId:String) -> Users? {
+        do{
+            let fetchRe:NSFetchRequest = Users.fetchRequest()
+            fetchRe.fetchLimit = 1
+            fetchRe.predicate = NSPredicate(format: "id = %@", userId)
+            let users = try context.fetch(fetchRe)
+            if !users.isEmpty{
+                if let user = users.first{
+                    return user
+                }
+            }
+        }catch let error as NSError{
+            print(error)
+        }
+        return nil
+    }
     
     
-    //
-    //    func isExist(firstName:String,lastName:String) -> (isExist:Bool,user:Users?) {
-    //
-    //        do{
-    //            let fetchRe:NSFetchRequest = Users.fetchRequest()
-    //            fetchRe.fetchLimit = 1
-    //            fetchRe.predicate = NSPredicate(format: "firstName = %@", firstName)
-    //            fetchRe.predicate = NSPredicate(format: "lastName = %@", lastName)
-    //            let user = try context.fetch(fetchRe)
-    //            if !user.isEmpty{
-    //                if let _user = user.first{
-    //                    return (true,_user)
-    //                }
-    //            }
-    //        }catch let error as NSError{
-    //            print(error)
-    //        }
-    //        SCLAlertView().showError("Error", subTitle: "Invaild User Name")
-    //        return (false,nil)
-    //    }
     
     
 }

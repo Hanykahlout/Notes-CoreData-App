@@ -16,20 +16,16 @@ class SignInViewController: UIViewController {
     
     var userController:UserController!
     var userManager:UserManager!
+    var user:Users?
     override func viewDidLoad() {
         super.viewDidLoad()
         initalization()
     }
     
     func initalization(){
-        setManager()
-    }
-    
-    func setManager()  {
         userController = UserController()
         userManager = UserManager()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
     }
@@ -75,17 +71,14 @@ extension SignInViewController {
                 
                 let allUser = userController.read()
                 if let _allUser = allUser{
-                    var isExist:Bool = false
                     for x in _allUser{
                         if x.firstName == String(firstName) && x.lastName == String(lastName){
-                            isExist = true
+                            user = x
                             userManager.create(user: x)
                             return true
                         }
                     }
-                    if !isExist {
-                        SCLAlertView().showError("Error", subTitle: "Invaild User Name")
-                    }
+                    SCLAlertView().showError("Error", subTitle: "Invaild User Name")
                 }
                 
             }
@@ -99,11 +92,9 @@ extension SignInViewController {
     
     
     func matchPassword() -> Bool {
-        let user = userManager.read()
-            if user.password == passwordTextField.text!{
-                return true
-            }
-        
+        if user!.password == passwordTextField.text!{
+            return true
+        }
         SCLAlertView().showWarning("Error", subTitle: "Invaild Password")
         return false
     }

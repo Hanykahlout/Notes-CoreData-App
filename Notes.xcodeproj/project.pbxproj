@@ -8,19 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		64E548FE58B6CAF1AECF48A9 /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0263CB510EDB9676E4543B5 /* Pods_Notes.framework */; };
-		9100B49F24EEC3A800223B67 /* categoriesNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100B49E24EEC3A800223B67 /* categoriesNoteViewController.swift */; };
-		9100B4C124EECC5F00223B67 /* categoriesNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100B4C024EECC5F00223B67 /* categoriesNameTableViewCell.swift */; };
-		9100B4C324EED53A00223B67 /* newNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100B4C224EED53A00223B67 /* newNoteViewController.swift */; };
+		9100B49F24EEC3A800223B67 /* CategoriesNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100B49E24EEC3A800223B67 /* CategoriesNoteViewController.swift */; };
+		9100B4C124EECC5F00223B67 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100B4C024EECC5F00223B67 /* NoteTableViewCell.swift */; };
+		9100B4C324EED53A00223B67 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100B4C224EED53A00223B67 /* NewNoteViewController.swift */; };
 		910FF11624EEE5D6007C639C /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910FF11524EEE5D6007C639C /* NewCategoryViewController.swift */; };
 		910FF11824EEE931007C639C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910FF11724EEE931007C639C /* SettingsViewController.swift */; };
-		910FF11A24EEED9D007C639C /* languageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910FF11924EEED9D007C639C /* languageTableViewCell.swift */; };
-		910FF11C24EEEDD9007C639C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910FF11B24EEEDD9007C639C /* ProfileTableViewCell.swift */; };
-		910FF11E24EEEDFB007C639C /* AboutAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910FF11D24EEEDFB007C639C /* AboutAppTableViewCell.swift */; };
-		910FF12024EEEE27007C639C /* AboutCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910FF11F24EEEE27007C639C /* AboutCourseTableViewCell.swift */; };
-		910FF12224EEEE50007C639C /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910FF12124EEEE50007C639C /* LogoutTableViewCell.swift */; };
+		912C53D124FA645500196F25 /* NotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912C53D024FA645500196F25 /* NotesController.swift */; };
 		912D248E24ED9D6F009C0386 /* categoriesCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D248D24ED9D6F009C0386 /* categoriesCellTableViewCell.swift */; };
 		91700DDA24EC3206008ED9E9 /* UIViewCustomCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91700DD924EC3206008ED9E9 /* UIViewCustomCornerRadius.swift */; };
 		91700DDC24EC34FE008ED9E9 /* UILabelDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91700DDB24EC34FE008ED9E9 /* UILabelDesignable.swift */; };
+		917CC4A924F92B3000B37707 /* StaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CC4A824F92B3000B37707 /* StaticTableViewController.swift */; };
 		919261B124EF373E0039446A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919261B024EF373E0039446A /* ProfileViewController.swift */; };
 		919261B324EF40170039446A /* aboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919261B224EF40170039446A /* aboutAppViewController.swift */; };
 		91C3CD7924EEF60B00C3D0A4 /* UIImageViewDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C3CD7824EEF60B00C3D0A4 /* UIImageViewDesignable.swift */; };
@@ -61,19 +58,16 @@
 /* Begin PBXFileReference section */
 		7172EF95220C7E5F35BA6643 /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
 		8978A747627373C0BE9FE450 /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
-		9100B49E24EEC3A800223B67 /* categoriesNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesNoteViewController.swift; sourceTree = "<group>"; };
-		9100B4C024EECC5F00223B67 /* categoriesNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesNameTableViewCell.swift; sourceTree = "<group>"; };
-		9100B4C224EED53A00223B67 /* newNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newNoteViewController.swift; sourceTree = "<group>"; };
+		9100B49E24EEC3A800223B67 /* CategoriesNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesNoteViewController.swift; sourceTree = "<group>"; };
+		9100B4C024EECC5F00223B67 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		9100B4C224EED53A00223B67 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		910FF11524EEE5D6007C639C /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		910FF11724EEE931007C639C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		910FF11924EEED9D007C639C /* languageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = languageTableViewCell.swift; sourceTree = "<group>"; };
-		910FF11B24EEEDD9007C639C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		910FF11D24EEEDFB007C639C /* AboutAppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppTableViewCell.swift; sourceTree = "<group>"; };
-		910FF11F24EEEE27007C639C /* AboutCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCourseTableViewCell.swift; sourceTree = "<group>"; };
-		910FF12124EEEE50007C639C /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
+		912C53D024FA645500196F25 /* NotesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesController.swift; sourceTree = "<group>"; };
 		912D248D24ED9D6F009C0386 /* categoriesCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesCellTableViewCell.swift; sourceTree = "<group>"; };
 		91700DD924EC3206008ED9E9 /* UIViewCustomCornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCustomCornerRadius.swift; sourceTree = "<group>"; };
 		91700DDB24EC34FE008ED9E9 /* UILabelDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelDesignable.swift; sourceTree = "<group>"; };
+		917CC4A824F92B3000B37707 /* StaticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaticTableViewController.swift; path = "Notes/Controllers/Signed App Screens Controller/StaticTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		919261B024EF373E0039446A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		919261B224EF40170039446A /* aboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutAppViewController.swift; sourceTree = "<group>"; };
 		91C3CD7824EEF60B00C3D0A4 /* UIImageViewDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewDesignable.swift; sourceTree = "<group>"; };
@@ -230,9 +224,10 @@
 		91CE56BD24EC112A00451984 /* Signed App Screens Controller */ = {
 			isa = PBXGroup;
 			children = (
+				917CC4A824F92B3000B37707 /* StaticTableViewController.swift */,
 				91CE56BE24EC11D300451984 /* CategoriesViewController.swift */,
-				9100B49E24EEC3A800223B67 /* categoriesNoteViewController.swift */,
-				9100B4C224EED53A00223B67 /* newNoteViewController.swift */,
+				9100B49E24EEC3A800223B67 /* CategoriesNoteViewController.swift */,
+				9100B4C224EED53A00223B67 /* NewNoteViewController.swift */,
 				910FF11524EEE5D6007C639C /* NewCategoryViewController.swift */,
 				910FF11724EEE931007C639C /* SettingsViewController.swift */,
 				919261B024EF373E0039446A /* ProfileViewController.swift */,
@@ -245,12 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				912D248D24ED9D6F009C0386 /* categoriesCellTableViewCell.swift */,
-				9100B4C024EECC5F00223B67 /* categoriesNameTableViewCell.swift */,
-				910FF11924EEED9D007C639C /* languageTableViewCell.swift */,
-				910FF11B24EEEDD9007C639C /* ProfileTableViewCell.swift */,
-				910FF11D24EEEDFB007C639C /* AboutAppTableViewCell.swift */,
-				910FF11F24EEEE27007C639C /* AboutCourseTableViewCell.swift */,
-				910FF12124EEEE50007C639C /* LogoutTableViewCell.swift */,
+				9100B4C024EECC5F00223B67 /* NoteTableViewCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -269,6 +259,7 @@
 				91FD359E24F2CE5B002C926A /* UserDefults */,
 				91F8CCE724F1A279006F59BC /* CategoriesController.swift */,
 				91DC650A24F2BCF10000F266 /* UserController.swift */,
+				912C53D024FA645500196F25 /* NotesController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -421,29 +412,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				919261B324EF40170039446A /* aboutAppViewController.swift in Sources */,
-				9100B49F24EEC3A800223B67 /* categoriesNoteViewController.swift in Sources */,
+				9100B49F24EEC3A800223B67 /* CategoriesNoteViewController.swift in Sources */,
 				91CE56B324EC01D700451984 /* BottomBorderTextField.swift in Sources */,
 				91CE56AF24EBF2EF00451984 /* SignInViewController.swift in Sources */,
 				91CE566F24EBD59000451984 /* AppDelegate.swift in Sources */,
-				910FF11A24EEED9D007C639C /* languageTableViewCell.swift in Sources */,
-				910FF12224EEEE50007C639C /* LogoutTableViewCell.swift in Sources */,
 				91CE56B124EBF30D00451984 /* SignUpViewController.swift in Sources */,
-				9100B4C324EED53A00223B67 /* newNoteViewController.swift in Sources */,
+				912C53D124FA645500196F25 /* NotesController.swift in Sources */,
+				9100B4C324EED53A00223B67 /* NewNoteViewController.swift in Sources */,
 				91CE569E24EBDD8100451984 /* ViewDesignable.swift in Sources */,
 				91CE567124EBD59000451984 /* SceneDelegate.swift in Sources */,
-				9100B4C124EECC5F00223B67 /* categoriesNameTableViewCell.swift in Sources */,
+				9100B4C124EECC5F00223B67 /* NoteTableViewCell.swift in Sources */,
 				91CE567924EBD59000451984 /* Notes.xcdatamodeld in Sources */,
 				91CE569C24EBDD6B00451984 /* ButtonDesignable.swift in Sources */,
 				91C3CD7924EEF60B00C3D0A4 /* UIImageViewDesignable.swift in Sources */,
 				91CE569B24EBDD6B00451984 /* TextFieldDesignable.swift in Sources */,
-				910FF11C24EEEDD9007C639C /* ProfileTableViewCell.swift in Sources */,
 				91FD35A224F2CE5B002C926A /* UserManager.swift in Sources */,
 				912D248E24ED9D6F009C0386 /* categoriesCellTableViewCell.swift in Sources */,
 				91700DDC24EC34FE008ED9E9 /* UILabelDesignable.swift in Sources */,
-				910FF12024EEEE27007C639C /* AboutCourseTableViewCell.swift in Sources */,
 				91DC650B24F2BCF10000F266 /* UserController.swift in Sources */,
+				917CC4A924F92B3000B37707 /* StaticTableViewController.swift in Sources */,
 				91CE56BF24EC11D300451984 /* CategoriesViewController.swift in Sources */,
-				910FF11E24EEEDFB007C639C /* AboutAppTableViewCell.swift in Sources */,
 				910FF11624EEE5D6007C639C /* NewCategoryViewController.swift in Sources */,
 				919261B124EF373E0039446A /* ProfileViewController.swift in Sources */,
 				91700DDA24EC3206008ED9E9 /* UIViewCustomCornerRadius.swift in Sources */,

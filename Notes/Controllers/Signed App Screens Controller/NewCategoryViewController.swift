@@ -15,21 +15,18 @@ class NewCategoryViewController: UIViewController {
     @IBOutlet weak var screenTitleLabel: UILabel!
     var categoriesManager:CategoriesController!
     var isSave:Bool!
-    var userManager:UserManager!
-    var oldDescription:String?
-    var oldName:String?
-    
+    var user:Users!
+    var category:Categories!
     override func viewDidLoad() {
         super.viewDidLoad()
         initlization()
         // Do any additional setup after loading the view.
     }
     func initlization() {
-        userManager = UserManager()
         categoriesManager = CategoriesController()
         setTitleLabel()
     }
-   
+    
     
     @IBAction func backAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -43,8 +40,8 @@ class NewCategoryViewController: UIViewController {
             screenTitleLabel.text = "New Category"
         }else{
             screenTitleLabel.text = "Update Category"
-            categoryNameTextField.text = oldName
-            descriptionTextField.text = oldDescription
+            categoryNameTextField.text = category.name!
+            descriptionTextField.text = category.descriptions!
         }
     }
     
@@ -52,11 +49,8 @@ class NewCategoryViewController: UIViewController {
 extension NewCategoryViewController{
     func performSave() {
         if cheackData(){
-            if !thereIsASameName(){
-                
-                isSave ? save() : update()
-                
-            }
+            isSave ? save() : update()
+             
         }
     }
     
@@ -69,41 +63,36 @@ extension NewCategoryViewController{
         return false
     }
     
-    
-    func thereIsASameName() -> Bool{
-        return categoriesManager.isExist(name: categoryNameTextField.text!)
-    }
     func clear() {
         categoryNameTextField.text = ""
         descriptionTextField.text = ""
     }
     
     func save(){
-        if !thereIsASameName(){
-            
-            
-            let cate = Categories(context: categoriesManager.context)
-            cate.name = categoryNameTextField.text!
-            cate.descriptions = descriptionTextField.text!
-            cate.user = userManager.read()
-            let isCreated = categoriesManager.create(category: cate)
-            if isCreated {
-                clear()
-                SCLAlertView().showInfo("Succefull Created", subTitle: "Category has been created 😀👍🏻")
-            }else{
-                SCLAlertView().showError("Error", subTitle: "Category has not been created 😥 👎🏻")
-            }
+        
+        let cate = Categories(context: categoriesManager.context)
+        cate.id = UUID().uuidString 
+        cate.name = categoryNameTextField.text!
+        cate.descriptions = descriptionTextField.text!
+        cate.user = user
+        let isCreated = categoriesManager.create(category: cate)
+        if isCreated {
+            clear()
+            SCLAlertView().showInfo("Succefull Created", subTitle: "Category has been created 😀👍🏻")
+            clear()
+        }else{
+            SCLAlertView().showError("Error", subTitle: "Category has not been created 😥 👎🏻")
         }
         
     }
+    
     func update() {
-        if !thereIsASameName(){
-            let isUpdated = categoriesManager.update(oldName: oldName!, newName: categoryNameTextField.text!, newDescription: descriptionTextField.text!)
-            if isUpdated{
-                SCLAlertView().showInfo("Succefully Updated", subTitle: "Your Categry has been updated")
-            }else{
-                SCLAlertView().showError("Error", subTitle: "Your Category has not been updated")
-            }
+        let isUpdated = categoriesManager.update(categoryId: category.id!, newName: categoryNameTextField.text!, newDescription: descriptionTextField.text!)
+        if isUpdated{
+            SCLAlertView().showInfo("Succefully Updated", subTitle: "Your Categry has been updated")
+            clear()
+        }else{
+            SCLAlertView().showError("Error", subTitle: "Your Category has not been updated")
         }
     }
 }

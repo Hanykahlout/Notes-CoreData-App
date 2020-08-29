@@ -18,8 +18,15 @@ class aboutAppViewController: UIViewController {
     func initlization() {
         clearBackgroundNavBar()
     }
-    @IBAction func backAction(_ sender: Any) {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
     }
+    
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func clearBackgroundNavBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()

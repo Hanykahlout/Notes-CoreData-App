@@ -8,14 +8,15 @@
 
 import UIKit
 protocol categoryCell {
-    func delete(name:String)
-    func update(oldName:String,oldDescription:String)
+    func delete(index:IndexPath)
+    func update(index:IndexPath)
 }
 class categoriesCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var workLabel: UILabel!
     @IBOutlet weak var noteLabel: UILabel!
     @IBOutlet weak var characterLabel: UILabelDesignable!
+    var index:IndexPath!
     var delegate:categoryCell?
     
     override func awakeFromNib() {
@@ -32,18 +33,18 @@ class categoriesCellTableViewCell: UITableViewCell {
     func setCategory(category:Categories) {
         workLabel.text = category.name
         noteLabel.text = category.descriptions
-//        characterLabel.text = category.name!.first!
+        characterLabel.text = String(category.name!.prefix(1))
     }
     
     @IBAction func editAction(_ sender: Any) {
         if let _delegate = delegate{
-            _delegate.update(oldName: workLabel.text!,oldDescription: noteLabel.text!)
+            _delegate.update(index: index)
         }
     }
     
     @IBAction func deleteAction(_ sender: Any) {
         if let _delegate = delegate{
-           _delegate.delete(name: workLabel.text!)
+            _delegate.delete(index: index)
        }
     }
     
