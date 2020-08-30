@@ -6,5 +6,6 @@ target 'Notes' do
   use_frameworks!
 
   # Pods for Notes
-  pod 'SCLAlertView'
+pod 'SCLAlertView'
+
 end
