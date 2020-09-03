@@ -46,13 +46,16 @@ class ProfileViewController: UIViewController {
         
     }
     func setUserInfo() {
-        nameLabel.text = user.firstName! + " " + user.lastName!
-        emailLabel.text = user.email!
-        characterLabel.text = String(user.firstName!.prefix(1))
+        fillUserInfo()
         let categories = user.categories?.allObjects as! [Categories]
         categoriesNumber.text = String(categories.count)
         setDoneAndWaitingNumber()
         fillTextFields()
+    }
+    func fillUserInfo() {
+        nameLabel.text = user.firstName! + " " + user.lastName!
+        emailLabel.text = user.email!
+        characterLabel.text = String(user.firstName!.prefix(1))
     }
     func fillTextFields() {
         firstNameTextField.text = user.firstName!
@@ -96,6 +99,7 @@ extension ProfileViewController {
     func performUpdate()  {
         if cheackData(){
             update()
+            fillUserInfo()
         }else{
             SCLAlertView().showError("Error", subTitle: "You Should Fill All Text Fileds !! ☹️☹️☹️")
         }
